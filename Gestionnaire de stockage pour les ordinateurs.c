@@ -289,6 +289,7 @@ int main()
     Noeud *tete = NULL;
     Noeud *tete1 = NULL;
     int test = 1;
+    int jk=1;
     while (test)
     {
         printf("\nMenu principal :\n");
