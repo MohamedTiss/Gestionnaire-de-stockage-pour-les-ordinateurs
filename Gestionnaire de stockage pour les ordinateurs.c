@@ -61,14 +61,14 @@ void ajouterAuStock(Noeud **tete, Ordinateur ordinateur,Date d) {
 }
 void ajout(Noeud **head, Ordinateur ordinateur){
 	int i=0;
-	printf("combien de pc vous voulez ajouter ? \n");
+	printf("Combien de PC vous voulez ajouter ? \n");
 	scanf("%d",&i);
 	for(int j=0;j<i;j++){
 		Date d;
-	    printf("Donner les caracteristiques de l'ordinateur N %d :", j+1 );
+	    printf("Donner les caracteristiques de l\'ordinateur N %d :", j+1 );
 	    printf("Donner la reference : ");
 	    scanf("%d", &ordinateur.ref); 
-	    printf("la marque : ");
+	    printf("La marque : ");
 	    scanf("%s", &ordinateur.marque);
 	    printf("Donner le type disque dur (HDD/SSD) : ");
 	    scanf("%s", &(ordinateur.S.type_disque_dur));
@@ -94,11 +94,11 @@ void ajout(Noeud **head, Ordinateur ordinateur){
 	    scanf("%s", &(ordinateur.p.modele));
 	    printf("Donner le nb_coeurs du CPU : ");
 	    scanf("%d", &(ordinateur.p.nb_coeurs));
-	    printf("Donner la frequence d'horloge du CPU (Hz) : ");
+	    printf("Donner la frequence d\'horloge du CPU (Hz) : ");
 	    scanf("%d", &(ordinateur.p.frequence));
 	    printf("Donner memoire cache du CPU : ");
 	    scanf("%d", &(ordinateur.p.memoire_cache));
-	    printf("Donner la date d'ajout (jj mm aaaa) : ");
+	    printf("Donner la date d\'ajout (jj mm aaaa) : ");
 	    scanf("%d",&d.jour);
 	    scanf("%d",&d.mois);
 	    scanf("%d",&d.an);
@@ -118,15 +118,15 @@ void recherche(Noeud *liste, int ref){
 void modification(Noeud *liste) {
 	Ordinateur nouvellesValeurs;
     int ref;
-    printf("donner la reference de l'ancien ordinateur : ");
+    printf("Donner la reference de l\'ancien ordinateur : ");
     scanf("%d",&ref);
     Noeud *noeudActuel = rechercherOrdinateur(liste,ref);
     
     if (noeudActuel=NULL) {
     	Date d;
     	Ordinateur nouvellesValeurs;
-	    printf("Veuillez entrer les informations de l'ordinateur à modifier :\n");
-	    printf("entrer les nouvelles caracteristiques de l'ordinateur  ");
+	    printf("Veuillez entrer les informations de l\'ordinateur Ã  modifier :\n");
+	    printf("Entrer les nouvelles caracteristiques de l\'ordinateur  ");
 	    printf("\n Donner la  nouvelle reference : ");
 	    scanf("%d", &nouvellesValeurs.ref); 
 	    printf("la marque : ");
@@ -159,7 +159,7 @@ void modification(Noeud *liste) {
 	    scanf("%d", &(nouvellesValeurs.p.frequence));
 	    printf("Donner memoire cache du CPU : ");
 	    scanf("%d", &(nouvellesValeurs.p.memoire_cache));
-	    printf("Donner la date d'ajout (jj mm aaaa) : ");
+	    printf("Donner la date d\'ajout (jj mm aaaa) : ");
 	    scanf("%d",&d.jour);
 	    scanf("%d",&d.mois);
 	    scanf("%d",&d.an);
@@ -182,7 +182,7 @@ void modification(Noeud *liste) {
 	    noeudActuel->date=d;
     }
     else{
-    	printf("ce pc n'existe pas encore\n");
+    	printf("Ce PC n\'existe pas encore\n");
 	}
 }
 
@@ -191,26 +191,26 @@ void afficherOrdinateur(Noeud *liste,int ref) {
     Noeud *noeudActuel = rechercherOrdinateur(liste,ref);
 	
     if ( noeudActuel!=NULL) {
-        printf("Référence: %d\n", noeudActuel->ordinateur.ref);
+        printf("Reference: %d\n", noeudActuel->ordinateur.ref);
         printf("Marque: %s\n", noeudActuel->ordinateur.marque);
         printf("Type de disque dur: %s\n", noeudActuel->ordinateur.S.type_disque_dur);
-        printf("Capacité de stockage: %d GB\n", noeudActuel->ordinateur.S.capacite_stockage);
+        printf("CapacitÃ© de stockage: %d GB\n", noeudActuel->ordinateur.S.capacite_stockage);
         printf("RAM: %d GB\n", noeudActuel->ordinateur.RAM);
-        printf("Système d'exploitation: %s\n", noeudActuel->ordinateur.systeme_exploitation);
-        printf("Taille de l'écran: %d pouces\n", noeudActuel->ordinateur.taille_ecran);
+        printf("Systeme d'exploitation: %s\n", noeudActuel->ordinateur.systeme_exploitation);
+        printf("Taille de l\'Ã©cran: %d pouces\n", noeudActuel->ordinateur.taille_ecran);
         printf("Carte graphique: %s\n", noeudActuel->ordinateur.carte_graphique);
         printf("Type de clavier: %s\n", noeudActuel->ordinateur.type_clavier);
-        printf("Prix: %d €\n", noeudActuel->ordinateur.prix);
+        printf("Prix: %d â‚¬\n", noeudActuel->ordinateur.prix);
         printf("Poids: %d kg\n", noeudActuel->ordinateur.poids);
-        printf("Modèle CPU: %s\n", noeudActuel->ordinateur.p.modele);
+        printf("ModÃ¨le CPU: %s\n", noeudActuel->ordinateur.p.modele);
         printf("Nombre de coeurs: %d\n", noeudActuel->ordinateur.p.nb_coeurs);
-        printf("Fréquence: %d GHz\n", noeudActuel->ordinateur.p.frequence);
-        printf("Mémoire cache: %d MB\n", noeudActuel->ordinateur.p.memoire_cache);
+        printf("Frequence: %d GHz\n", noeudActuel->ordinateur.p.frequence);
+        printf("MÃ©moire cache: %d MB\n", noeudActuel->ordinateur.p.memoire_cache);
         printf("Autonomie: %d heures\n", noeudActuel->ordinateur.autonomie);
         printf("Date d'ajout : %d/%d/%d\n",noeudActuel->date.jour,noeudActuel->date.mois,noeudActuel->date.an);
     }
     else{
-    	printf("ce pc n'est pas encore enregistrer \n");
+    	printf("Ce pc n\'est pas encore enregistre \n");
 	}
 }
 void delete_computer(Noeud **head,Noeud **tete) {
@@ -223,7 +223,7 @@ void delete_computer(Noeud **head,Noeud **tete) {
     scanf("%d",&d.jour);
     scanf("%d",&d.mois);
     scanf("%d",&d.an);
-    printf("donner la reference du pc a supprime :\n");
+    printf("Donner la reference du pc a supprime :\n");
 	scanf("%d",&ref);
     while (current != NULL && current->ordinateur.ref != ref) {
         previous = current;
@@ -232,7 +232,7 @@ void delete_computer(Noeud **head,Noeud **tete) {
     }
 
     if (current == NULL) {
-        printf("l'ordinateur n'existe pas dans le stock");
+        printf("l\'ordinateur n\'existe pas dans le stock");
     }
 	else{
 	    if (s==0) {
@@ -264,7 +264,7 @@ void affjour(Noeud *tete,Date d){
 		noeud=noeud->suivant;
 	}
 	if(s==0){
-		printf("Il n'y a pad des ordinateurs enregistrer sur cette date\n ");
+		printf("Il n\'y a pad des ordinateurs enregistre sur cette date\n ");
 	}
 }
 void affmois(Noeud *tete,int m,int a){
@@ -281,7 +281,7 @@ void affmois(Noeud *tete,int m,int a){
 		noeud=noeud->suivant;
 	}
 	if(s==0){
-		printf("Il n'y a pad des ordinateurs enregistrer sur cet mois\n ");
+		printf("Il n\'y a pad des ordinateurs enregistre sur cet mois\n ");
 	}
 }
 int main()
@@ -292,9 +292,9 @@ int main()
     while (test)
     {
         printf("\nMenu principal :\n");
-        printf("1. Ajout d'un ordinateur\n");
+        printf("1. Ajout d\'un ordinateur\n");
         printf("2. Affichage des  ordinateurs\n");
-        printf("3. Recherche d'un ordinateur\n");
+        printf("3. Recherche d\'un ordinateur\n");
         printf("4. Modification d'un ordinateur\n");
         printf("5. Suppression d'un ordinateur\n");
         printf("6. Afficher les ordinateurs ajoutes par jours\n");
@@ -310,14 +310,14 @@ int main()
         case 1:
         {
             Ordinateur ordinateur;
-            printf("Veuillez entrer les informations de l'ordinateur a ajouter et la quantite :\n");
+            printf("Veuillez entrer les informations de l\'ordinateur a ajouter et la quantite :\n");
             ajout(&tete, ordinateur);
             break;
         }
         case 2:
         {
             int ref;
-			printf("donner la reference du pc a affiche :\n");
+			printf("Donner la reference du pc a affiche :\n");
 			scanf("%d",&ref);
             afficherOrdinateur(tete,ref);
             break;
@@ -326,9 +326,9 @@ int main()
         case 3:
         {
             Ordinateur ordinateur;
-            printf("Veuillez entrer les informations de l'ordinateur à rechercher :\n");
+            printf("Veuillez entrer les informations de l'ordinateur Ã  rechercher :\n");
             int ref;
-            printf("donner la reference de cet ordinateur : ");
+            printf("Donner la reference de cet ordinateur : ");
             scanf("%d",&ref);
             recherche(tete, ref);
             break;
@@ -356,7 +356,7 @@ int main()
 		case 7:
 		{
 			int m,a;
-			printf("Donner le mois et l'annee (mm aaaa) : ");
+			printf("Donner le mois et l\'annee (mm aaaa) : ");
         	scanf("%d",&m);
         	scanf("%d",&a);
         	affmois(tete,m,a);
@@ -375,7 +375,7 @@ int main()
 		case 9:
 		{
 			int m,a;
-			printf("Donner le mois et l'annee (mm aaaa) : ");
+			printf("Donner le mois et l\'annee (mm aaaa) : ");
         	scanf("%d",&m);
         	scanf("%d",&a);
         	affmois(tete1,m,a);
